@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Calendar
+    </title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="month-changer">
+                <span class="month-change-chevron" onclick="onPrevMonth()">
+                    <p class="chevron"><</p>
+                </span>
+                <span class="cur-month" id="cur-month">February</span>
+                <span class="month-change-chevron" onclick="onNextMonth()">
+                    <p class="chevron">></p>
+                </span>
+            </div>
+            
+            <div class="year-changer">
+                <span class="year-change-chevron" onclick="onPrevYear()">
+                    <p class="chevron"><</p>
+                </span>
+                <span id="year">2021</span>
+                <span class="year-change-chevron" onclick="onNextYear()">
+                    <p class="chevron">></p>
+                </span>
+            </div>
+        </div>
+        <div class="calendar-body animation-to-left" >
+            <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+        </div>
+        <div class="calendar-footer">
+
+        </div>
+
+    </div>
+    <div class="notes-cont">
+        <p class="added-notes-sign">Notes</p>
+        <div class="added-notes"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

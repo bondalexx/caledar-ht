@@ -1,0 +1,254 @@
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-300px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #212121;
+    gap: 50px;
+}
+
+.calendar-container {
+    width: max-content;
+    background-color: #50717b;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.calendar-container {
+    box-shadow: rgb(142 204 255 / 20%) 0 0 50px 5px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #151426;
+    padding: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+    height: 380px;
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: #c3c2c8;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: #151426;
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    font-weight: 600;
+    /* border-radius: 50%; */
+}
+
+.calendar-days div.curr-date {
+    background-color: #edf0f5;
+    border-radius: 50%;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.year-picker,
+.month-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change-chevron,
+.month-change-chevron {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.year-change-chevron:hover,
+.month-change-chevron:hover,
+.calendar-day-hover:hover {
+    background-color: #4B6A73;
+    border-radius: 50%;
+
+}
+
+.calendar-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.month-changer,
+.year-changer {
+    display: flex;
+    align-items: center;
+}
+
+
+.added-notes-on-date {
+    border: 2px solid #212121;
+    border-radius: 50%;
+}
+
+.changing-notes {
+    border: 2px solid #edf0f5;
+    border-radius: 50%;
+}
+
+.curr-date-with-notes {
+    border: 2px solid #edf0f5;
+    background-color: #212121;
+    color: #edf0f5;
+    border-radius: 50%;
+}
+
+.button-notes-active {
+    height: 40px;
+    width: 80px;
+    border: 2px solid #edf0f5;
+    background-color: #50717b;
+    border-radius: 10px;
+    color: #edf0f5;
+    cursor: pointer;
+}
+
+.button-notes-active:active {
+    background-color: #4B6A73;
+}
+
+.active-notes-button-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notes-input {
+    height: 150px;
+    width: 400px;
+    background-color: rgb(237, 240, 245);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.active-notes-footer-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.active-notes-sign-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.active-notes-sign {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.active-notes-body{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: all 1s ease-in;
+}
+
+.notes-cont {
+    width: max-content;
+    background-color: #50717b;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    width: 440px;
+    height: 807px;
+    box-shadow: rgb(142 204 255 / 20%) 0 0 50px 5px;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.animation-to-left{
+    animation: slideInLeft ease-in;
+}
+
+.added-notes-sign {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.added-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.added-note {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
